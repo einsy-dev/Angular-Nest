@@ -1,0 +1,55 @@
+services:
+  db:
+    container_name: ${PG_HOST}
+    image: postgres:latest
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${PG_DATABASE}
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_PORT: ${PG_HOST}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    networks:
+      - backend
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    networks:
+      - backend
+
+  server:
+    container_name: server
+    build: ./server/
+    env_file:
+      - .env
+    depends_on:
+      - db
+      - redis
+    ports:
+      - 4000:4000
+    networks:
+      - backend
+
+  client:
+    container_name: client
+    build: ./client/
+    env_file:
+      - .env
+    depends_on:
+      - server
+    ports:
+      - 3000:3000
+
+networks:
+  backend:
+    driver: bridge
