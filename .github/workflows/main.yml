@@ -9,7 +9,7 @@ env:
 on:
   push:
     branches:
-      - main
+      - release
 
 jobs:
   server:
@@ -45,7 +45,7 @@ jobs:
           port: ${{ env.PORT }}
           script: |
             cd app
-            sudo git pull origin main
+            sudo git pull origin release
 
   deploy:
     runs-on: ubuntu-latest
