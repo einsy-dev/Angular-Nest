@@ -1,0 +1,15 @@
+{
+  "name": "angular-nest",
+  "version": "1.0.0",
+  "description": "[![CI/CD Pipeline](https://github.com/einsy-dev/angular-nest/actions/workflows/main.yml/badge.svg)](https://github.com/einsy-dev/angular-nest/actions/workflows/main.yml)",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.0.11"
+  }
+}
