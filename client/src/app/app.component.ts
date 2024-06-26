@@ -19,7 +19,7 @@ export class AppComponent {
         serverPublicKey:
           'BB-HmTaiFj1K_0JlxK5yEW_CGhpCokAe9-PkqQi9EizVji4bnlNy8M7hAmJ2rCAtN4woo-8sp6wfzZDZcRTxS34',
       })
-      .then(sub => console.log(sub));
-    this.swPush.messages.subscribe(msg => console.log('msg', msg));
+      .then((sub) => console.log(sub));
+    this.swPush.messages.subscribe((msg) => console.log('msg', msg));
   }
 }
