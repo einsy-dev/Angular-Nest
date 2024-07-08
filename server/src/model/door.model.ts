@@ -1,5 +1,5 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @ObjectType()
 @Entity()
@@ -8,15 +8,43 @@ export class Door {
   @PrimaryGeneratedColumn()
   id: number;
 
-  // @Field()
-  // @Column({ nullable: true })
-  // firstName: string;
+  @Field()
+  @Column()
+  style: string;
 
-  // @Field()
-  // @Column({ nullable: true })
-  // lastName: string;
+  @Field()
+  @Column()
+  color: string;
 
-  // @Field()
-  // @Column({ default: true })
-  // isActive: boolean;
+  @Field()
+  @Column()
+  type: string;
+
+  @Field()
+  @Column()
+  material: string;
+
+  @Field()
+  @Column()
+  price: string;
+
+  @Field()
+  @Column()
+  width: number;
+
+  @Field()
+  @Column()
+  height: number;
+
+  @Field()
+  @Column()
+  thickness: number;
+
+  @Field()
+  @Column({ default: 0 })
+  quality: number;
+
+  @Field()
+  @Column()
+  add: string;
 }

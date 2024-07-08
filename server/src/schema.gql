@@ -7,5 +7,14 @@ type Door {
 }
 
 type Query {
-  getDoor: Door!
+  getDoors: [Door!]!
+}
+
+type Mutation {
+  createDoor(door: CreateDoorInput!): Door!
+}
+
+input CreateDoorInput {
+  username: String!
+  displayName: String
 }
