@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './entities/test.entity';
+import { Door } from './model/door.model';
+import { DoorModule } from './components/door/door.module';
 
 @Module({
   imports: [
@@ -13,13 +14,15 @@ import { User } from './entities/test.entity';
       username: 'user',
       password: 'user',
       database: 'user',
-      entities: [User],
+      entities: [Door],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([User]),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      autoSchemaFile: 'src/schema.gql',
+    }),
+    DoorModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {
   constructor() {}
