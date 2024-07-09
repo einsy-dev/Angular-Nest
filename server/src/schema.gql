@@ -2,8 +2,23 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Location {
+  id: Float!
+  name: String!
+}
+
 type Door {
-  id: Int!
+  id: Float!
+  style: String
+  color: String
+  type: String
+  material: String
+  price: String
+  width: Float
+  height: Float
+  thickness: Float
+  quality: Float
+  location: Location
 }
 
 type Query {
@@ -15,6 +30,5 @@ type Mutation {
 }
 
 input CreateDoorInput {
-  username: String!
-  displayName: String
+  color: String!
 }

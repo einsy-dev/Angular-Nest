@@ -4,6 +4,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Door } from './model/door.model';
 import { DoorModule } from './components/door/door.module';
+import { Location } from './model/location.model';
 
 @Module({
   imports: [
@@ -14,7 +15,7 @@ import { DoorModule } from './components/door/door.module';
       username: 'user',
       password: 'user',
       database: 'user',
-      entities: [Door],
+      entities: [Door, Location],
       synchronize: true,
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
