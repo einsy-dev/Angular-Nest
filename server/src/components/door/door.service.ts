@@ -16,7 +16,7 @@ export class DoorService {
     return this.doorRepository.find();
   }
 
-  findById(id: number): Promise<Door> {
+  findById(id: string): Promise<Door> {
     return this.doorRepository.findOneBy({ id });
   }
   async updateDoor(door: Door): Promise<Door> {
@@ -27,7 +27,7 @@ export class DoorService {
     return await this.doorRepository.save(oldDoor);
   }
 
-  deleteDoor(id: number): Promise<void> {
+  deleteDoor(id: string): Promise<void> {
     this.doorRepository.delete(id);
     return null;
   }

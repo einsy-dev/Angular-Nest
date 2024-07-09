@@ -6,7 +6,7 @@ import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 export class Location {
   @Field()
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Field()
   @Column()

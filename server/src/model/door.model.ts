@@ -13,7 +13,7 @@ import { Location } from './location.model';
 export class Door {
   @Field()
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Field({ nullable: true })
   @Column({ nullable: true })

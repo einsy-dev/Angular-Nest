@@ -16,4 +16,9 @@ export class DoorResolver {
   getDoors() {
     return this.doorService.findAll();
   }
+
+  @Query((returns) => Door)
+  getDoor(@Args('id') id: string) {
+    return this.doorService.findById(id);
+  }
 }

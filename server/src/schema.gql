@@ -3,12 +3,12 @@
 # ------------------------------------------------------
 
 type Location {
-  id: Float!
+  id: String!
   name: String!
 }
 
 type Door {
-  id: Float!
+  id: String!
   style: String
   color: String
   type: String
@@ -23,6 +23,7 @@ type Door {
 
 type Query {
   getDoors: [Door!]!
+  getDoor(id: String!): Door!
 }
 
 type Mutation {
