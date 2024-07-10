@@ -8,23 +8,23 @@ export class DoorResolver {
   constructor(private readonly doorService: DoorService) {}
 
   @Mutation((returns) => Door)
-  async createDoor(@Args('params') params: DoorI) {
-    return this.doorService.create(params);
+  async createDoor(@Args('data') data: DoorI) {
+    return this.doorService.create(data);
   }
 
   @Query((returns) => [Door])
-  async doors(@Args('params', { defaultValue: {} }) params: DoorI) {
-    return this.doorService.find(params);
+  async doors(@Args('data', { defaultValue: {} }) data: DoorI) {
+    return this.doorService.find(data);
   }
 
   @Query((returns) => [Door], { nullable: true })
-  async door(@Args('params') params: DoorI) {
-    return this.doorService.findOne(params);
+  async door(@Args('data') data: DoorI) {
+    return this.doorService.findOne(data);
   }
 
   @Mutation((returns) => Door)
-  async updateDoor(@Args('id') id: string, @Args('params') params: DoorI) {
-    return this.doorService.update(id, params);
+  async updateDoor(@Args('id') id: string, @Args('data') data: DoorI) {
+    return this.doorService.update(id, data);
   }
 
   @Mutation((returns) => Door)

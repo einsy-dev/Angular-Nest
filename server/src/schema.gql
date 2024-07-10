@@ -22,14 +22,23 @@ type Door {
 }
 
 type Query {
-  doors(params: DoorI! = {}): [Door!]!
-  door(params: DoorI!): [Door!]
-  locations(params: LocationI! = {}): [Location!]!
-  location(params: LocationI!): [Location!]
+  doors(data: DoorI! = {}): [Door!]!
+  door(data: DoorI!): [Door!]
+  locations(data: LocationI! = {}): [Location!]!
+  location(data: LocationI!): [Location!]
 }
 
 input DoorI {
+  style: String!
   color: String!
+  type: String!
+  material: String!
+  price: String!
+  width: Float!
+  height: Float!
+  thickness: Float!
+  quality: Float!
+  location: String!
 }
 
 input LocationI {
@@ -37,10 +46,10 @@ input LocationI {
 }
 
 type Mutation {
-  createDoor(params: DoorI!): Door!
-  updateDoor(id: String!, params: DoorI!): Door!
+  createDoor(data: DoorI!): Door!
+  updateDoor(id: String!, data: DoorI!): Door!
   deleteDoor(id: String!): Door!
-  createLocation(params: LocationI!): Location!
-  updateLocation(id: String!, params: LocationI!): Location!
+  createLocation(data: LocationI!): Location!
+  updateLocation(id: String!, data: LocationI!): Location!
   deleteLocation(id: String!): Location!
 }

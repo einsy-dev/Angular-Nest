@@ -8,26 +8,23 @@ export class LocationResolver {
   constructor(private readonly locationService: LocationService) {}
 
   @Mutation((returns) => Location)
-  async createLocation(@Args('params') params: LocationI) {
-    return this.locationService.create(params);
+  async createLocation(@Args('data') data: LocationI) {
+    return this.locationService.create(data);
   }
 
   @Query((returns) => [Location])
-  async locations(@Args('params', { defaultValue: {} }) params: LocationI) {
-    return this.locationService.find(params);
+  async locations(@Args('data', { defaultValue: {} }) data: LocationI) {
+    return this.locationService.find(data);
   }
 
   @Query((returns) => [Location], { nullable: true })
-  async location(@Args('params') params: LocationI) {
-    return this.locationService.findOne(params);
+  async location(@Args('data') data: LocationI) {
+    return this.locationService.findOne(data);
   }
 
   @Mutation((returns) => Location)
-  async updateLocation(
-    @Args('id') id: string,
-    @Args('params') params: LocationI,
-  ) {
-    return this.locationService.update(id, params);
+  async updateLocation(@Args('id') id: string, @Args('data') data: LocationI) {
+    return this.locationService.update(id, data);
   }
 
   @Mutation((returns) => Location)

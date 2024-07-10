@@ -1,11 +1,7 @@
 import { InputType, Field } from '@nestjs/graphql';
-import { Location } from '@/model/location.model';
 
 @InputType()
 export class DoorI {
-  @Field()
-  id: string;
-
   @Field()
   style: string;
 
@@ -34,5 +30,5 @@ export class DoorI {
   quality: number;
 
   @Field()
-  location: Location;
+  location: string;
 }
