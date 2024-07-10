@@ -4,7 +4,7 @@
 
 type Location {
   id: String!
-  name: String!
+  name: String
 }
 
 type Door {
@@ -24,6 +24,13 @@ type Door {
 type Query {
   getDoors: [Door!]!
   getDoor(id: String!): Door!
+  locations(params: LocationI! = {}): [Location!]!
+  location(params: LocationI!): [Location!]
+}
+
+input LocationI {
+  id: String
+  name: String
 }
 
 type Mutation {

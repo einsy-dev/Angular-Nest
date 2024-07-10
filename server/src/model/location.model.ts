@@ -8,7 +8,7 @@ export class Location {
   @PrimaryGeneratedColumn()
   id: string;
 
-  @Field()
-  @Column()
+  @Field({ nullable: true })
+  @Column({ nullable: true })
   name: string;
 }

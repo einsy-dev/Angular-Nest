@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Door } from './model/door.model';
 import { DoorModule } from './components/door/door.module';
 import { Location } from './model/location.model';
+import { LocationModule } from './components/location/location.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { Location } from './model/location.model';
       autoSchemaFile: 'src/schema.gql',
     }),
     DoorModule,
+    LocationModule,
   ],
 })
 export class AppModule {
