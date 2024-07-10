@@ -9,28 +9,34 @@ export class DoorService {
     @InjectRepository(Door) private readonly doorRepository: Repository<Door>,
   ) {}
 
-  async create(door): Promise<Door[]> {
-    const newDoor = this.doorRepository.create(door);
-    return await this.doorRepository.save(newDoor);
+  async create(data): Promise<Door[]> {
+    const newOne = this.doorRepository.create(data);
+    return await this.doorRepository.save(newOne);
   }
 
-  async findAll(): Promise<Door[]> {
-    return this.doorRepository.find();
+  async find(params): Promise<Door[]> {
+    return this.doorRepository.createQueryBuilder().where(params).getMany();
   }
 
-  async findById(id: string): Promise<Door> {
-    return this.doorRepository.findOneBy({ id });
+  async findOne(params): Promise<Door> {
+    return this.doorRepository.createQueryBuilder().where(params).getOne();
   }
 
-  async updateDoor(door: Door): Promise<Door> {
-    const oldDoor = await this.doorRepository.findOneBy({ id: door.id });
-    if (!oldDoor) return null;
-    Object.assign(oldDoor, door);
-    return await this.doorRepository.save(oldDoor);
+  async update(id, data): Promise<Door> {
+    const oldOne = await this.doorRepository
+      .createQueryBuilder()
+      .where({ id })
+      .getOne();
+    if (!oldOne) return null;
+    Object.assign(oldOne, data);
+    return await this.doorRepository.save(oldOne);
   }
 
-  async deleteDoor(id: string): Promise<void> {
-    this.doorRepository.delete(id);
-    return null;
+  async delete(id): Promise<any> {
+    const result = await this.doorRepository
+      .createQueryBuilder()
+      .where({ id })
+      .delete();
+    return result;
   }
 }

@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Location } from '@/model/location.model';
+import { LocationI } from './location.interface';
 
 @Injectable()
 export class LocationService {
@@ -10,30 +11,30 @@ export class LocationService {
     private readonly locationRepository: Repository<Location>,
   ) {}
 
-  async create(location): Promise<Location[]> {
-    const newlocation = this.locationRepository.create(location);
-    return await this.locationRepository.save(newlocation);
+  async create(data): Promise<Location[]> {
+    const newOne = this.locationRepository.create(data);
+    return await this.locationRepository.save(newOne);
   }
 
-  async find(params?: any): Promise<Location[]> {
+  async find(params): Promise<Location[]> {
     return this.locationRepository.createQueryBuilder().where(params).getMany();
   }
 
-  async findOne(params: any): Promise<Location> {
+  async findOne(params): Promise<Location> {
     return this.locationRepository.createQueryBuilder().where(params).getOne();
   }
 
-  async update({ id, ...data }: Location): Promise<Location> {
-    const oldlocation = await this.locationRepository
+  async update(id, data): Promise<Location> {
+    const oldOne = await this.locationRepository
       .createQueryBuilder()
       .where({ id })
       .getOne();
-    if (!oldlocation) return null;
-    Object.assign(oldlocation, data);
-    return await this.locationRepository.save(oldlocation);
+    if (!oldOne) return null;
+    Object.assign(oldOne, data);
+    return await this.locationRepository.save(oldOne);
   }
 
-  async delete(id: string): Promise<any> {
+  async delete(id): Promise<any> {
     const result = await this.locationRepository
       .createQueryBuilder()
       .where({ id })
