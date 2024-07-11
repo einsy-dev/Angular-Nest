@@ -2,8 +2,8 @@ import { ObjectType, Field } from '@nestjs/graphql';
 import {
   Column,
   Entity,
-  JoinColumn,
-  OneToOne,
+  JoinTable,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { Location } from './location.model';
@@ -11,48 +11,48 @@ import { Location } from './location.model';
 @ObjectType()
 @Entity()
 export class Door {
-  @Field()
   @PrimaryGeneratedColumn()
+  @Field()
   id: string;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   style: string;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   color: string;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   type: string;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   material: string;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   price: string;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   width: number;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   height: number;
 
-  @Field({ nullable: true })
   @Column({ nullable: true })
+  @Field({ nullable: true })
   thickness: number;
 
-  @Field({ nullable: true })
-  @Column({ nullable: true })
-  quality: number;
+  @Column({ default: 0 })
+  @Field()
+  quantity: number;
 
+  @ManyToOne(() => Location, (location) => location)
+  @JoinTable({ name: 'location' })
   @Field({ nullable: true })
-  @JoinColumn()
-  @OneToOne(() => Location)
-  location?: Location;
+  location: Location;
 }

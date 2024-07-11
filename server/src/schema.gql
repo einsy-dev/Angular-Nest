@@ -17,7 +17,7 @@ type Door {
   width: Float
   height: Float
   thickness: Float
-  quality: Float
+  quantity: Float!
   location: Location
 }
 
@@ -29,16 +29,16 @@ type Query {
 }
 
 input DoorI {
-  style: String!
-  color: String!
-  type: String!
-  material: String!
-  price: String!
-  width: Float!
-  height: Float!
-  thickness: Float!
-  quality: Float!
-  location: String!
+  style: String
+  color: String
+  type: String
+  material: String
+  price: String
+  width: Float
+  height: Float
+  thickness: Float
+  quality: Float
+  location: String
 }
 
 input LocationI {
@@ -46,7 +46,7 @@ input LocationI {
 }
 
 type Mutation {
-  createDoor(data: DoorI!): Door!
+  createDoor(data: DoorI): Door!
   updateDoor(id: String!, data: DoorI!): Door!
   deleteDoor(id: String!): Door!
   createLocation(data: LocationI!): Location!

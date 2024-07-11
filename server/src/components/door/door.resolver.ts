@@ -8,7 +8,7 @@ export class DoorResolver {
   constructor(private readonly doorService: DoorService) {}
 
   @Mutation((returns) => Door)
-  async createDoor(@Args('data') data: DoorI) {
+  async createDoor(@Args('data', { nullable: true }) data: DoorI) {
     return this.doorService.create(data);
   }
 

@@ -2,33 +2,33 @@ import { InputType, Field } from '@nestjs/graphql';
 
 @InputType()
 export class DoorI {
-  @Field()
+  @Field({ nullable: true })
   style: string;
 
-  @Field()
+  @Field({ nullable: true })
   color: string;
 
-  @Field()
+  @Field({ nullable: true })
   type: string;
 
-  @Field()
+  @Field({ nullable: true })
   material: string;
 
-  @Field()
+  @Field({ nullable: true })
   price: string;
 
-  @Field()
+  @Field({ nullable: true })
   width: number;
 
-  @Field()
+  @Field({ nullable: true })
   height: number;
 
-  @Field()
+  @Field({ nullable: true })
   thickness: number;
 
-  @Field()
+  @Field({ nullable: true })
   quality: number;
 
-  @Field()
+  @Field({ nullable: true })
   location: string;
 }

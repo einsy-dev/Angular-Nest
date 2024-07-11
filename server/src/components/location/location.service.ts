@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Location } from '@/model/location.model';
-import { LocationI } from './location.interface';
 
 @Injectable()
 export class LocationService {
