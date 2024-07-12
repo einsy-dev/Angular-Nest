@@ -11,7 +11,7 @@ import { Location } from './location.model';
 @ObjectType()
 @Entity()
 export class Door {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   @Field()
   id: string;
 

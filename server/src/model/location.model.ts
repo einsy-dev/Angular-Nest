@@ -6,7 +6,7 @@ import JSON, { GraphQLJSON } from 'graphql-type-json';
 @Entity()
 export class Location {
   @Field()
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Field({ nullable: true })
