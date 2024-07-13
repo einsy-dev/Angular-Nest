@@ -6,8 +6,6 @@ import { DoorComponent } from '../../entities';
   standalone: true,
   imports: [DoorComponent],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.scss'
+  styleUrl: './main.component.scss',
 })
-export class MainComponent {
-
-}
+export class MainComponent {}

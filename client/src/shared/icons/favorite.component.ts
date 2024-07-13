@@ -28,7 +28,7 @@ export class FavoriteSvgComponent {
     window.setInterval(() => {
       if (this.color === 'green') {
         this.color = 'red';
-				return
+        return;
       }
       this.color = 'green';
     }, 2000);
