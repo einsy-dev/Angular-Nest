@@ -12,5 +12,6 @@ import { CompareSvgComponent } from '../../shared/icons/compare.component';
 export class DoorComponent {
   img = '';
   title = 'Polka';
-  text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tincidunt nisi. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tincidunt nisi. Aliquam erat volutpat.';
+  text =
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tincidunt nisi. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at tincidunt nisi. Aliquam erat volutpat.';
 }
