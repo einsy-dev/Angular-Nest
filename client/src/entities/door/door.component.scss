@@ -1,0 +1,40 @@
+.container {
+  width: fit-content;
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 0.5;
+  .img_container {
+    background-color: green;
+    img {
+      object-fit: cover;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+}
+.btn_container {
+  padding: 5px;
+  margin-top: auto;
+  display: flex;
+  gap: min(5px, 10px);
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid 1px black;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .cart {
+    padding: 5px;
+    text-transform: uppercase;
+  }
+  .favorite {
+  }
+  .svg {
+    transform: translate(0, 2px);
+  }
+}
