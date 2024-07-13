@@ -1,28 +1,49 @@
 .container {
-  width: fit-content;
+  width: 100%;
+  max-width: 250px;
   border: solid 1px black;
   display: flex;
   flex-direction: column;
   aspect-ratio: 0.5;
   .img_container {
-    background-color: green;
+    width: 100%;
+    aspect-ratio: 0.8;
+    display: flex;
+    align-items: center;
+    background-color: #e9eef1;
     img {
-      object-fit: cover;
-      overflow: hidden;
       width: 100%;
     }
   }
 }
+
+.text_container {
+  padding: 5px;
+  .title {
+    width: fit-content;
+    margin: auto;
+  }
+  .text {
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
 .btn_container {
   padding: 5px;
+  margin-bottom: 5px;
   margin-top: auto;
   display: flex;
-  gap: min(5px, 10px);
+  gap: 8px;
+  display: flex;
+  justify-content: center;
   button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: solid 1px black;
 
     &:hover {
       cursor: pointer;
@@ -31,10 +52,13 @@
   .cart {
     padding: 5px;
     text-transform: uppercase;
+    border: solid 1px black;
   }
   .favorite {
   }
   .svg {
-    transform: translate(0, 2px);
+    height: 30px;
+    width: 30px;
+    transform: translate(0, 1px);
   }
 }

@@ -6,8 +6,8 @@ import { Component } from '@angular/core';
   styles: [
     `
       svg {
-        height: 24px;
-        width: 24px;
+        height: 100%;
+        width: 100%;
       }
     `,
   ],
@@ -22,15 +22,5 @@ import { Component } from '@angular/core';
   </svg>`,
 })
 export class FavoriteSvgComponent {
-  color = 'red';
-  constructor() {
-    if (typeof window == 'undefined') return;
-    window.setInterval(() => {
-      if (this.color === 'green') {
-        this.color = 'red';
-        return;
-      }
-      this.color = 'green';
-    }, 2000);
-  }
+  color = '#252525';
 }
