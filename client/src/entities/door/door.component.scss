@@ -1,4 +1,5 @@
 .container {
+  min-width: 250px;
   width: 100%;
   max-width: 300px;
   display: flex;
@@ -28,8 +29,6 @@
     text-align: center;
   }
   .text {
-    aspect-ratio: 1.5;
-    overflow: hidden;
   }
 }
 
