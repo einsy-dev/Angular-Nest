@@ -1,0 +1,44 @@
+header {
+  width: 100%;
+	background-color: #0095c7;
+}
+nav {
+	padding: 10px;
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+	justify-content: space-between;
+}
+
+.nav_list, .account_list {
+  display: inherit;
+	gap: 10px;
+	font-family: "Poppins", sans-serif;
+	user-select: none;
+	& > li { 
+		padding: 10px 20px;
+		color: white;
+		border-radius: 5px;
+		background-color: #08639c;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #0b7ab7;
+			box-shadow: 5px 5px 10px #053650;
+		}
+	}
+}
+
+
+.doors {
+	position: relative;
+	.dropdown {
+		background-color: #08639c;
+		border-radius: 5px;
+		padding: 10px;
+		position: absolute;
+		top: 105%;
+		left: 0;
+	}
+}

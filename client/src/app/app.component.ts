@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "../widgets/header/header.component";
 // import { SwPush } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: `<main class="main">
+  imports: [RouterOutlet, HeaderComponent],
+  template: ` 
+  <main>
+    <app-header/>
     <router-outlet />
   </main>`,
 })
