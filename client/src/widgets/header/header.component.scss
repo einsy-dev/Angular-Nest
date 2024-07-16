@@ -3,7 +3,7 @@ header {
 	background-color: #0095c7;
 }
 nav {
-	padding: 10px;
+	padding: 10px 0;
   width: 100%;
   max-width: 1440px;
   margin: auto;
@@ -27,18 +27,5 @@ nav {
 			background-color: #0b7ab7;
 			box-shadow: 5px 5px 10px #053650;
 		}
-	}
-}
-
-
-.doors {
-	position: relative;
-	.dropdown {
-		background-color: #08639c;
-		border-radius: 5px;
-		padding: 10px;
-		position: absolute;
-		top: 105%;
-		left: 0;
 	}
 }

@@ -8,17 +8,7 @@ import { Component } from '@angular/core';
     <nav class="nav">
       <ul class="nav_list">
         <li class="home">Home</li>
-        <li class="doors">
-          Doors
-          <div class="dropdown">
-            <ul>
-              <li>Door 1</li>
-              <li>Door 2</li>
-              <li>Door 3</li>
-            </ul>
-          </div>
-        </li>
-        <li class="contact">Contact</li>
+        <li class="doors">Doors</li>
       </ul>
       <ul class="account_list">
         <li>Wishlist</li>

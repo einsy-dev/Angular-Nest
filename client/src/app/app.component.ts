@@ -7,10 +7,20 @@ import { HeaderComponent } from '../widgets/header/header.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, HeaderComponent],
-  template: ` <main>
+  template: `
     <app-header />
-    <router-outlet />
-  </main>`,
+    <main class="">
+      <router-outlet />
+    </main>
+  `,
+  styles: `
+    main {
+      min-height: 100vh;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  `,
 })
 export class AppComponent {
   // constructor(private swPush: SwPush) {}
