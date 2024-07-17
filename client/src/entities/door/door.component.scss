@@ -37,6 +37,9 @@
   padding: var(--padding);
   gap: var(--gap);
   margin-top: auto;
+  button {
+    cursor: pointer;
+  }
   .cart {
     text-transform: uppercase;
     padding: var(--padding);

@@ -11,7 +11,6 @@ import { CompareSvgComponent } from '../../shared/icons/compare.component';
 })
 export class DoorComponent {
   @Input({ required: true }) img = '';
-  @Input({ required: true }) props = '';
   @Input({ required: true }) title = '';
   @Input({ required: true }) text = '';
 }

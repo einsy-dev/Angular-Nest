@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from '../widgets/header/header.component';
+import { SidebarComponent } from '../widgets/sidebar/sidebar.component';
 // import { SwPush } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet, HeaderComponent, SidebarComponent],
   template: `
     <app-header />
-    <main class="">
-      <router-outlet />
+    <main>
+      <app-sidebar class="filter" />
+      <div class="container">
+        <router-outlet />
+      </div>
     </main>
   `,
   styles: `
@@ -18,7 +22,14 @@ import { HeaderComponent } from '../widgets/header/header.component';
       min-height: 100vh;
       width: 100%;
       max-width: 1440px;
-      margin: 0 auto;
+      margin: 10px auto;
+      display: flex;
+      gap: 10px;
+      .filter {
+      }
+      .container {
+        margin: 0 auto;
+      }
     }
   `,
 })

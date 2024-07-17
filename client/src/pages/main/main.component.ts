@@ -1,14 +1,33 @@
 import { Component } from '@angular/core';
 import { DoorComponent } from '../../entities';
-import { FilterComponent } from '../../widgets/filter/filter.component';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [DoorComponent, FilterComponent],
+  imports: [DoorComponent],
   template: `<div class="main_page">
-    <app-filter />
+    @for (el of doors; track $index) {
+      <app-door [img]="el.img" [title]="el.title" [text]="el.text" />
+    }
   </div>`,
   styleUrl: './main.component.scss',
 })
-export class MainComponent {}
+export class MainComponent {
+  doors = [
+    {
+      img: 'https://picsum.photos/200/300',
+      title: 'Door 1',
+      text: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+      img: 'https://picsum.photos/200/300',
+      title: 'Door 1',
+      text: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+      img: 'https://picsum.photos/200/300',
+      title: 'Door 1',
+      text: 'Lorem ipsum dolor sit amet.',
+    },
+  ];
+}

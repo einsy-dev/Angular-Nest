@@ -23,7 +23,7 @@ import { Component } from '@angular/core';
   </svg>`,
 })
 export class CompareSvgComponent {
-  color = '#252525';
+  color = 'black';
   onClick() {
     this.color = this.color === 'black' ? 'red' : 'black';
   }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-filter',
+  selector: 'app-sidebar',
   standalone: true,
   imports: [RouterLink],
   template: `<div class="filter">
@@ -19,6 +19,6 @@ import { RouterLink } from '@angular/router';
       <li>Roof Panel</li>
     </ul>
   </div>`,
-  styleUrl: './filter.component.scss',
+  styleUrl: './sidebar.component.scss',
 })
-export class FilterComponent {}
+export class SidebarComponent {}
