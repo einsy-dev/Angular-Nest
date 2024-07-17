@@ -4,13 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-account',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      account works!
-    </p>
-  `,
-  styleUrl: './account.component.scss'
+  template: ` <p>account works!</p> `,
+  styleUrl: './account.component.scss',
 })
-export class AccountComponent {
-
-}
+export class AccountComponent {}
