@@ -11,7 +11,7 @@ import { SidebarComponent } from '../widgets/sidebar/sidebar.component';
   template: `
     <app-header />
     <main>
-      <app-sidebar class="filter" />
+      <app-sidebar />
       <div class="container">
         <router-outlet />
       </div>
@@ -19,16 +19,14 @@ import { SidebarComponent } from '../widgets/sidebar/sidebar.component';
   `,
   styles: `
     main {
-      min-height: 100vh;
+      height: 100%;
       width: 100%;
       max-width: 1440px;
       margin: 10px auto;
       display: flex;
       gap: 10px;
-      .filter {
-      }
       .container {
-        margin: 0 auto;
+        width: 100%;
       }
     }
   `,
