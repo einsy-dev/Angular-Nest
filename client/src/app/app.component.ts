@@ -24,7 +24,7 @@ import { SidebarComponent } from '../widgets/sidebar/sidebar.component';
       max-width: 1440px;
       margin: 10px auto;
       display: flex;
-      gap: 10px;
+      gap: 20px;
       .container {
         width: 100%;
       }

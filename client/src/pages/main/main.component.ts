@@ -15,17 +15,17 @@ import { DoorComponent } from '../../entities';
 export class MainComponent {
   doors = [
     {
-      img: 'https://picsum.photos/200/300',
+      img: 'https://picsum.photos/200/250',
+      title: 'Door 12',
+      text: 'Lorem ipsum dolor sit amet.',
+    },
+    {
+      img: 'https://picsum.photos/200/250',
       title: 'Door 1',
       text: 'Lorem ipsum dolor sit amet.',
     },
     {
-      img: 'https://picsum.photos/200/300',
-      title: 'Door 1',
-      text: 'Lorem ipsum dolor sit amet.',
-    },
-    {
-      img: 'https://picsum.photos/200/300',
+      img: 'https://picsum.photos/200/250',
       title: 'Door 1',
       text: 'Lorem ipsum dolor sit amet.',
     },
